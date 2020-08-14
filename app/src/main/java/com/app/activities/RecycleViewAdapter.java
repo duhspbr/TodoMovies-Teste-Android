@@ -10,14 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.R;
+import com.app.api.models.Movie;
+import com.app.utils.Constants;
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Formatter;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.RecycleViewHolder> {
 
-//    private final List<UserModel> mUsers;
-//
-//    public LineAdapter(ArrayList users) {
-//        mUsers = users;
-//    }
+    private final ArrayList<Movie> movies;
+
+   public RecycleViewAdapter(ArrayList<Movie> movies) {
+        this.movies = movies;
+    }
 
     @Override
     public RecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -27,13 +34,17 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull RecycleViewHolder holder, int position) {
-//        holder.moreButton.setOnClickListener(view -> updateItem(position));
-//        holder.deleteButton.setOnClickListener(view -> removerItem(position));
+        holder.title.setText(this.movies.get(position).getOriginal_title());
+        holder.Year.setText(this.movies.get(position).getRelease_date().substring(0, 4));
+
+        Glide.with(holder.imgSimilar.getContext())
+                .load(Constants.url_img+this.movies.get(position).getPoster_path())
+                .into(holder.imgSimilar);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return movies.size();
     }
 
 

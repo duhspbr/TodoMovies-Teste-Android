@@ -10,10 +10,6 @@ import com.app.mvp.main.Interfaces.IMainView;
 import com.app.mvp.main.Interfaces.IMovieCallBack;
 import com.app.mvp.main.Interfaces.ISimilarCallback;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class MainPresenter implements IMainPresenter {
     private IMainView mainView;
     private IMainModel mainModel;
@@ -41,7 +37,7 @@ public class MainPresenter implements IMainPresenter {
         mainModel.getSimilar(new ISimilarCallback() {
             @Override
             public void OnResponse(Similar similar) {
-
+                mainView.setupRecycleSimilar(similar);
             }
 
             @Override
