@@ -4,6 +4,7 @@ import com.app.api.models.Movie;
 
 public interface IMainModel {
     void getMovies(IMovieCallBack callBack);
+    void getSimilar(ISimilarCallback callback);
 }
 
 

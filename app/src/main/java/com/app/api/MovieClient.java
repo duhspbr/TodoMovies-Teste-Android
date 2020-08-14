@@ -9,7 +9,7 @@ public class MovieClient {
 
     public MovieClient() {
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/")
+                .baseUrl("https://api.themoviedb.org/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
