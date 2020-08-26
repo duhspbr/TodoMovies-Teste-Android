@@ -34,27 +34,60 @@
 
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical">
+
             <TextView
                 android:id="@+id/txtTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="40dp"
-                />
+                android:paddingStart="15dp"
+                android:layout_alignParentTop="true"
+                android:textSize="40dp" />
+
+                <ImageView
+                    android:id="@+id/src_like"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_like"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtTitle"
+                    android:layout_marginLeft="25dp"
+                    android:layout_alignParentLeft="true"/>
+
             <TextView
                 android:id="@+id/txtLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTitle"
+                android:paddingStart="20dp"
+                android:layout_alignRight="@+id/src_like"
                 android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                />
+                android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/src_rd"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_rd"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtTitle"
+                    android:layout_toRightOf="@+id/txtLikes"/>
+
             <TextView
                 android:id="@+id/txtPopularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/src_rd"
+                android:layout_below="@+id/txtTitle"
+                android:layout_marginLeft="20dp"
                 android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                />
+                android:textSize="15dp" />
+
+            </RelativeLayout>
+
         </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView

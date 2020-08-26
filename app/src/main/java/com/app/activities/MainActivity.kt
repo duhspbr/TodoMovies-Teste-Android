@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), IMainView {
         txtPopularity = findViewById(R.id.txtPopularity)
         txtLikes = findViewById(R.id.txtLikes)
 
-
         similar_list?.isNestedScrollingEnabled = false
         txtTitle?.text  = movie.original_title
         txtPopularity?.text  = movie.popularity.toString() + "Watched"
